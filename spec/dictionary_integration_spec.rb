@@ -11,3 +11,12 @@ describe('the new word path', {:type => :feature}) do
     expect(page).to have_content('dongle')
   end
 end
+
+describe('the word page path', {:type => :feature}) do
+  it('displays the word page when user clicks a word on the home page') do
+    visit('/')
+    click_link('dongle')
+    expect(page).to have_content('Dongle')
+    expect(page).to have_content('New Definition')
+  end
+end
