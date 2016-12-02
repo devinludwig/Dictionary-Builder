@@ -30,6 +30,7 @@ post('/new_definition') do
   word_id = params.fetch('word_id')
   @word = Word.find(word_id.to_i())
   definition = params.fetch('definition')
-  Definition.new({:text => definition}).save_definition()
+  part = params.fetch('part')
+  @word.save_definition(Definition.new({:text => definition, :part => part}))
   erb(:word)
 end

@@ -3,6 +3,19 @@
 <form class="well" action="/new_definition" method="post">
   <input type="hidden" name="word_id" value="<%= @word.id() %>">
 
+  <label for="part">Part of Speech</label>
+  <select class="form-control form-group" name="part" id="part">
+  <option>Noun</option>
+  <option>Verb</option>
+  <option>Adjective</option>
+  <option>Adverb</option>
+  <option>Pronoun</option>
+  <option>Preposition</option>
+  <option>Conjunction</option>
+  <option>Interjection</option>
+  <option>Determiner</option>
+  </select>
+
   <label for='definition'>New Definition:</label>
   <input id='definition' name='definition' type='text' placeholder="Your Definition Here">
 
