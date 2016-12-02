@@ -33,4 +33,8 @@ class Word
     end
     found_word
   end
+
+  define_singleton_method(:alphabetize) do
+    @@words.sort_by!{|i| i.spelling()}
+  end
 end

@@ -37,6 +37,19 @@ describe('the new definition path', {:type => :feature}) do
     click_button('Add Definition')
     expect(page).to have_content('a small device able to be connected to and used with a computer, especially to allow access to wireless broadband or use of protected software.')
     expect(page).to have_content('Noun')
+  end
+end
 
+describe('the alphabetize path', {:type => :feature}) do
+  it('alphabetizes all words that have been entered') do
+    visit('/')
+    fill_in('word', :with => 'carrot')
+    click_button('Add Word')
+    fill_in('word', :with => 'banana')
+    click_button('Add Word')
+    fill_in('word', :with => 'apple')
+    click_button('Add Word')
+    click_link('Alphabetize')
+    expect(page).to have_content('apple banana carrot dongle')
   end
 end

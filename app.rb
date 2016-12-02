@@ -34,3 +34,9 @@ post('/new_definition') do
   @word.save_definition(Definition.new({:text => definition, :part => part}))
   erb(:word)
 end
+
+get('/sort') do
+  @words = Word.all
+  Word.alphabetize()
+  erb(:index)
+end
