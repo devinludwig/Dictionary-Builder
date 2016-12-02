@@ -14,6 +14,13 @@ describe('Word') do
     end
   end
 
+  describe('#id') do
+    it('returns the id instance variable of the word') do
+      test_word = Word.new({:spelling => 'dictionary'})
+      expect(test_word.id()).to(eq(1))
+    end
+  end
+
   describe('#save') do
     it('saves word to the @@words class variable') do
       test_word = Word.new({:spelling => 'dictionary'})

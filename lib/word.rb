@@ -1,10 +1,11 @@
 class Word
-  attr_reader(:spelling, :definitions)
+  attr_reader(:spelling, :definitions, :id)
   @@words = []
 
   def initialize(attributes)
     @spelling = attributes.fetch(:spelling)
     @definitions = []
+    @id = @@words.length() + 1
   end
 
   def save
