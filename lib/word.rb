@@ -11,6 +11,10 @@ class Word
     @@words.push(self)
   end
 
+  def save_definition(definition)
+    @definitions.push(definition)
+  end
+
   define_singleton_method(:all) do
     @@words
   end
@@ -19,5 +23,5 @@ class Word
     @@words = []
   end
 
-  
+
 end
