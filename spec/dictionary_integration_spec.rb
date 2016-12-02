@@ -21,10 +21,22 @@ describe('the word page path', {:type => :feature}) do
   end
 end
 
-describe('the new definition path', {:type => :feature}) do
+describe('the new definition form path', {:type => :feature}) do
   it('displays the definition form page when user clicks the new definition button') do
     visit('/word/1')
     click_link('New Definition')
     expect(page).to have_content('Part of Speech')
+  end
+end
+
+describe('the new definition path', {:type => :feature}) do
+  it('adds a definition to a word if user submits definition form') do
+    visit('/word/1/definition')
+    fill_in('definition', {:with => 'a small device able to be connected to and used with a computer, especially to allow access to wireless broadband or use of protected software.'})
+    find('#part').find(:xpath, 'option[1]').select_option
+    click_button('Add Definition')
+    expect(page).to have_content('a small device able to be connected to and used with a computer, especially to allow access to wireless broadband or use of protected software.')
+    expect(page).to have_content('Noun')
+
   end
 end
