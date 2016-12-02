@@ -1,0 +1,10 @@
+<h1 class="jumbotron"><%= @word.spelling().capitalize %></h1>
+
+<form class="well" action="/new_definition" method="post">
+  <input type="hidden" name="word_id" value="<%= @word.id() %>">
+
+  <label for='definition'>New Definition:</label>
+  <input id='definition' name='definition' type='text' placeholder="Your Definition Here">
+
+  <button type="submit" class="btn btn-primary">Add Definition</button>
+</form>

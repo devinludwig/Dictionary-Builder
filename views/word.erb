@@ -1,4 +1,4 @@
-<h1 class="jumbotron"><%= @word.spelling() %></h1>
+<h1 class="jumbotron"><%= @word.spelling().capitalize %></h1>
 <% @word.definitions().each() do |definition| %>
   <div class="panel panel-default">
     <h3 class="panel-heading"><%= definition.part() %></h3>
@@ -8,4 +8,4 @@
 <a href="/word/<%= @word.id() %>/definition"><button type="button" name="definition">New Definition</button></a>
 <br>
 <br>
-<a href="/words"><button type="button" name="return">Return to Word List</button></a>
+<a href="/"><button type="button" name="return">Return to Word List</button></a>
