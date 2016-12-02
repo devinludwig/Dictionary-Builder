@@ -31,7 +31,7 @@ describe('Word') do
   describe('#save_definition') do
     it('saves an argument definition to the @definitions instance variable') do
       test_word = Word.new({:spelling => 'dictionary'})
-      test_definition = Definition.new({:text => 'a list of words and their definitions'})
+      test_definition = Definition.new({:text => 'a list of words and their definitions', :part => 'Noun'})
       expect(test_word.save_definition(test_definition)).to(eq([test_definition]))
     end
   end
