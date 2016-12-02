@@ -40,3 +40,9 @@ get('/sort') do
   Word.alphabetize()
   erb(:index)
 end
+
+post('/search') do
+  search_word = params.fetch('search')
+  @matches = Word.search_for(search_word)
+  erb(:search_result)
+end

@@ -1,0 +1,11 @@
+<h1 class="jumbotron">Dictionary Builder</h1>
+
+<h2>Click on a word to see its definitions.</h2>
+
+<ul class="well">
+<% @matches.each() do |match| %>
+  <li><a href="/word/<%= match.id() %>"><%= match.spelling() %></a></li>
+<% end %>
+</ul>
+
+<a href="/"><button type="button" name="return">Return to Word List</button></a>

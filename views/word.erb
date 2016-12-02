@@ -2,7 +2,7 @@
 <% @word.definitions().each() do |definition| %>
   <div class="panel panel-default">
     <h3 class="panel-heading"><%= definition.part() %></h3>
-    <p><%= definition.text() %></p>
+    <p>    <%= definition.text() %></p>
   </div>
 <% end %>
 <a href="/word/<%= @word.id() %>/definition"><button type="button" name="definition">New Definition</button></a>

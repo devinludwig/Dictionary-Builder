@@ -37,4 +37,8 @@ class Word
   define_singleton_method(:alphabetize) do
     @@words.sort_by!{|i| i.spelling()}
   end
+
+  define_singleton_method(:search_for) do |search_word|
+    @@words.select{|word| word.spelling.downcase.include?(search_word.downcase)}
+  end
 end
