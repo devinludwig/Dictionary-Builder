@@ -53,3 +53,12 @@ describe('the alphabetize path', {:type => :feature}) do
     expect(page).to have_content('apple banana carrot dongle')
   end
 end
+
+describe('the search path', {:type => :feature}) do
+  it('searches word list for user input and reveals matches in results page') do
+    visit('/')
+    fill_in('search', :with => 'carrot')
+    click_button('Search')
+    expect(page).to have_content('carrot Return to Word List')
+  end
+end
